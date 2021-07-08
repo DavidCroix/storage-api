@@ -1,29 +1,28 @@
-# About this project
+# Acerca de este proyecto
 
-
-The main goal of this project is to have a platform where you can rate music albums for
-the artists that will be available. In this platform you will find the albums covers
-and there will be a comment box where you can leave your comments about it, and also rate
-the albums from 1 to 10.
+El objetivo principal de este proyecto es tener una plataforma donde puedas calificar álbumes de música para
+los artistas que estarán disponibles. En esta plataforma encontrarás las carátulas de los álbumes
+y habrá un cuadro de comentarios donde puede dejar sus comentarios al respecto y también calificar
+los álbumes del 1 al 10.
 
 # How it works.
 
 | Path								| Description     |
 |-----------------------------------|-----------------|
-|/musiclife/login					| This is the path where you will find the Login.
-|/musiclife/artists_list				| In this path you will find the list of the artist available.
-|/musiclife/albums_lists_artist 		| This is the path of the albums available of a single artist.
-|/musiclife/user/add					| This is the path to add a new user.
+|/musiclife/login					| Esta es la ruta donde encontrará el inicio de sesión.
+|/musiclife/artists_list				| En este camino encontrarás la lista de artistas disponibles.
+|/musiclife/albums_lists_artist 		| Esta es la ruta de los álbumes disponibles de un solo artista.
+|/musiclife/user/add					| Esta es la ruta para agregar un nuevo usuario.
 
 
-# Related Files
+# Archivos relacionados
 
 - `routes/musiclife.py`
 
 - `modules/musiclife.py`
 
 
-# Structure of API
+# Estructura de API
 
 - Artist(id_artist)
 - Album(album_id, id_artist, genre, release_date)
@@ -31,42 +30,42 @@ the albums from 1 to 10.
 - Comment and rate(album_id, user_id, rate, date)
 
 
-# Storage Data Operations
+# Operaciones de almacenamiento de datos
 
-### User Operation
+### Operación del usuario
 
-- Name and password.
+- Nombre y contraseña.
 
-- The ID will be generated automatictilly.
+- La identificación se generará automáticamente.
 
-### Album Operation
+### Operación del álbum
 
-- The album that is selected, it will display a comment box and a range box where the user will be able to rate from 1 to 10.
+- El álbum que está seleccionado, mostrará un cuadro de comentarios y un cuadro de rango donde el usuario podrá calificar de 1 a 10.
 
 
-# Query Data
+# Consulta de datos
 
-- Request Artist
+- Solicitud de artista
 	- Albums
 	-Comment
 	-Genre
 
-# Request and Respond Structure
+# Estructura de solicitud y respuesta
 
-### User Register
+### Registro de usuario
 ```
 {
 	"name": "David Cruz Zepeda"
 	"password" "1234567"
 }
 ```
-### Succesful Register ID Response
+### Respuesta de ID de registro exitosa
 ```
 {
 	"id": "00001"
 }
 ```
-### Comment and Rate Register
+### Registro de comentarios y valoraciones
 ```
 {
 	"comment": "This album in my opinion has a nice rap bars, and the melody is very dope, I hope Freddie Dredd dont loose the flow and style"
@@ -74,20 +73,20 @@ the albums from 1 to 10.
 	"date": "2021-04-23T18:25:43.511Z"
 }
 ```
-### Succesful Comment Register Response
+### Respuesta exitosa del registro de comentarios
 ```
 {
 	"id": Comment + "0001"
 }
 ```
 
-Resources Routes Implementation
+### Implementación de rutas de recursos
 
 
-`POST /musiclife/artist/albums_lists_artist/comment` : This will register the comment, rate and date.
+`POST /musiclife/artist/albums_lists_artist/comment` : Esto registrará el comentario, la tasa y la fecha.
 
-`GET /musiclife/artists_list` : this will request the list of the available artists.
+`GET /musiclife/artists_list` : Esto solicitará la lista de los artistas disponibles.
 
-`GET /musiclife/albums_lists_artist` : This will request the list of the available albums of the artist.
+`GET /musiclife/albums_lists_artist` : Esto solicitará la lista de los álbumes disponibles del artista.
 
-`POST /musiclife/user/add` : This will register a new user.
+`POST /musiclife/user/add` : Esto registrará un nuevo usuario.
