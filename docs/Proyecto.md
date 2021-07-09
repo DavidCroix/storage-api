@@ -90,3 +90,41 @@ los álbumes del 1 al 10.
 `GET /musiclife/albums_lists_artist` : Esto solicitará la lista de los álbumes disponibles del artista.
 
 `POST /musiclife/user/add` : Esto registrará un nuevo usuario.
+
+# Pasos de implementación en general (descripción general)
+
+### Descripción general del problema
+
+Este proyecto ayudará al público en general, al tener una calificación y comentarios sobre
+los álbumes del artista. La mayor parte de las veces la gente no sabe lo que la gente
+piensa en un álbum o la calificación.
+
+### Motivación del proyecto
+
+Este proyecto fue motivado por la necesidad de tener una fuente donde poder encontrar la calificación,
+y comentarios sobre los álbumes de música, con la esperanza de tener algún comentario sobre el conjunto
+música, dando una referencia, de lo que el público en general puede esperar encontrar en el
+artista de un album. Para las personas que hacen música este proyecto será útil porque pueden
+encontrar las mejores muestras, o conocer las voces, características, etc.
+
+### ¿Quién es el público afectado por el problema que solucionó este proyecto?
+
+Este proyecto ayudará a los productores de música y al público en general a traerles una página web,
+donde pueden encontrar información sobre los álbumes de música de los artistas disponibles.
+
+### Solución específica de este proyecto
+
+La solución proporcionará información sobre los álbumes de música que desarrollan los artistas,
+esta información funcionará como referencia de lo que el público puede encontrar en el álbum.
+Esto ayudará a los productores musicales a tener cierta información sobre qué tipo de muestras
+alguien puede encontrar, la voz, la instrumental, etc., etc.
+
+### Recursos humanos, recursos informáticos e infraestructura.
+
+Para este proyecto necesitaremos una recopilación masiva de las portadas de los álbumes que cada
+artista tiene sobre la existencia, por lo que de esa manera el proyecto tuvo una amplia variedad de géneros de música,
+igual que artista, álbumes, etc.
+
+Para los recursos informáticos, necesitaremos un servidor dedicado donde ejecutamos un servidor HTTP. Y
+otros servicios que serán necesarios para brindar el servicio. También necesitaremos una base de datos donde
+debe almacenar todos los comentarios, tarifas, usuarios y fechas.
