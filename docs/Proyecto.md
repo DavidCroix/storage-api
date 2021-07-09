@@ -150,3 +150,39 @@ El modulo para almacenamiento debe de ser creado de manera que se puedan almacen
 ## Plan para la verificacion del producto
 
 Una vez concluido el proyecto se tendran que realizar pruebas para serciorarse de que el funcionamiento es correcto. De igual manera se haran pruebas para encontrar posibles errores que el usuario final podria provocar.
+
+
+# Computo en la nube
+
+1. Crear Fork del proyecto storage-API
+
+Aqui se señala cual es el commit a partir de donde se realizo el fork.
+
+| Concepto                 | Commit Hash|
+| --------------------- | ----------- |
+|  Creacion de Fork|   b7ad51029eb46ed9c48170f52c80c906173f3e72
+
+2. Crear los archivos correspondientes a su proyecto, y someterlos a control de versiones
+
+| Concepto                 | Commit Hash|
+| --------------------- | ----------- |
+|  Creacion de docs/musiclife.md|   ef097c4125eec5b0e0d73212ac05e986b5df5904
+
+3. Creacion de documento con las rutas.
+
+| Concepto                 | Commit Hash|
+| --------------------- | ----------- |
+|  Creacion de routes/musiclife.py|   7a17635b39a28d9fa42a5c13160c05daac4e4a41
+
+4. Creacion de documento de funciones
+
+| Concepto                 | Commit Hash|
+| --------------------- | ----------- |
+|  Creacion de modules/musiclife.py|   4ccfa193574286b51a76475318f94497be1ddebe
+
+
+5. Creacion de Mock Ups
+
+| Concepto                 | Commit Hash|
+| --------------------- | ----------- |
+|  Creacion de modules/musiclife.py|   4ccfa193574286b51a76475318f94497be1ddebe
