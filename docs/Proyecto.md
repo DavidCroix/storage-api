@@ -91,7 +91,9 @@ los álbumes del 1 al 10.
 
 `POST /musiclife/user/add` : Esto registrará un nuevo usuario.
 
-# Pasos de implementación en general (descripción general)
+#Documento de plan de implementación
+
+# Pasos de implementación en general (Aspecto general)
 
 ### Descripción general del problema
 
@@ -128,3 +130,23 @@ igual que artista, álbumes, etc.
 Para los recursos informáticos, necesitaremos un servidor dedicado donde ejecutamos un servidor HTTP. Y
 otros servicios que serán necesarios para brindar el servicio. También necesitaremos una base de datos donde
 debe almacenar todos los comentarios, tarifas, usuarios y fechas.
+
+# Aspecto Tecnico
+
+### Modulos de codigo necesarios
+
+- Rutas: Las rutas son necesarias para que brinden una estructura a la pagina al momento de navegar por la pagina.
+
+- Almacenamiento: Es necesario que existan funciones para poder almacenar el texto que sera introducido en los cuadros de texto.
+
+### Metodos de almacenamiento
+
+- Para el almacenamiento solo se requiere una funcion para guardar el texto en forma `string` .
+
+## Plan para la codificacion de los Modulos
+
+El modulo para almacenamiento debe de ser creado de manera que se puedan almacenar los datos satisfactoriamente. Es necesario realizar una funcion que no deje puertas traseras a errores.
+
+## Plan para la verificacion del producto
+
+Una vez concluido el proyecto se tendran que realizar pruebas para serciorarse de que el funcionamiento es correcto. De igual manera se haran pruebas para encontrar posibles errores que el usuario final podria provocar.
