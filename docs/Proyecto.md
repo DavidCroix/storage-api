@@ -185,4 +185,10 @@ Aqui se señala cual es el commit a partir de donde se realizo el fork.
 
 | Concepto                 | Commit Hash|
 | --------------------- | ----------- |
-|  Creacion de modules/musiclife.py|   4ccfa193574286b51a76475318f94497be1ddebe
+|  Creacion de /docs/assets/|   948608729216ffaf2316004ef2b6f5cd0a5d5639
+
+## Explicacion de Mock Ups
+![Login](https://github.com/DavidCroix/storage-api/blob/948608729216ffaf2316004ef2b6f5cd0a5d5639/docs/assets/Mock%20Up%20Inicio%20Music%20Life.png)
+Dentro de la ruta /docs/assets en la imagen `Mock Up Inicio Music Life.png` podremos encontrar la estructura deseada de la pagina, que sera el inicio. Donde tendremos los botones de Artistas, Albums, una barra de busqueda, asi como una seccion donde se encontrara el contenido mas nuevo.
+
+Dentro de la imagen `Mock Up Lista de Artistas.png`
