@@ -191,4 +191,11 @@ Aqui se señala cual es el commit a partir de donde se realizo el fork.
 ![Login](https://github.com/DavidCroix/storage-api/blob/948608729216ffaf2316004ef2b6f5cd0a5d5639/docs/assets/Mock%20Up%20Inicio%20Music%20Life.png)
 Dentro de la ruta /docs/assets en la imagen `Mock Up Inicio Music Life.png` podremos encontrar la estructura deseada de la pagina, que sera el inicio. Donde tendremos los botones de Artistas, Albums, una barra de busqueda, asi como una seccion donde se encontrara el contenido mas nuevo.
 
-Dentro de la imagen `Mock Up Lista de Artistas.png`
+![Login](https://github.com/DavidCroix/storage-api/blob/1e02710332aca970fd168249329c7bb96c7b2777/docs/assets/Mock%20Up%20Lista%20de%20Artistas.png)
+Dentro de la imagen `Mock Up Lista de Artistas.png` se desplegara la lista de los artistas que se encuentren disponibles al momento de dar click en el boton de artistas.
+
+![Login](https://github.com/DavidCroix/storage-api/blob/1e02710332aca970fd168249329c7bb96c7b2777/docs/assets/Mock%20Up%20Lista%20de%20Albums%20de%20Artista.png)
+Posteriormente en la imagen `Mock Up Lista de Albums de Artista.png` al dar click sobre el nombre de algun artista este redirigira a una pagina donde se mostraran la lista de los albums disponibles del artista.
+
+![Login](https://github.com/DavidCroix/storage-api/blob/1e02710332aca970fd168249329c7bb96c7b2777/docs/assets/Mock%20Up%20Agregar%20Comentario%20Album.png)
+Por ultimo en el Mock Up `Mock Up Agregar Comentario Album.png` se observara la manera en que se mirara al momento de querer ingresar un nuevo comentario y calificación al album del artista elegido, de igual manera una vez entrando al album se desplegaran los comentarios ya existentes acerca del album.
