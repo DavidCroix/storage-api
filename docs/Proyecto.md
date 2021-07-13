@@ -4,8 +4,20 @@ El objetivo principal de este proyecto es tener una plataforma donde puedas cali
 los artistas que estarán disponibles. En esta plataforma encontrarás las carátulas de los álbumes
 y habrá un cuadro de comentarios donde puede dejar sus comentarios al respecto y también calificar
 los álbumes del 1 al 10.
+# Modelado de datos
 
-# How it works.
+## Entidades
+
+- Artista(id_artist)
+El artista sera la entidad que contenga los nombres de los artistas disponibles para poder desplegar la lista de los albums.
+
+- Albums(album_id)
+Los albums son la entidad que contiene la lista de los albums disponibles por artista.
+
+- Usuario(user_id)
+Este sera necesario para identificarse dentro de la plataforma.
+
+# Como funciona
 
 | Path								| Description     |
 |-----------------------------------|-----------------|
@@ -13,7 +25,7 @@ los álbumes del 1 al 10.
 |/musiclife/artists_list				| En este camino encontrarás la lista de artistas disponibles.
 |/musiclife/albums_lists_artist 		| Esta es la ruta de los álbumes disponibles de un solo artista.
 |/musiclife/user/add					| Esta es la ruta para agregar un nuevo usuario.
-
+|/musiclife/albums					| Esta es la ruta que desplegara una lista con todos los albums disponibles.
 
 # Archivos relacionados
 
@@ -25,7 +37,7 @@ los álbumes del 1 al 10.
 # Estructura de API
 
 - Artist(id_artist)
-- Album(album_id, id_artist, genre, release_date)
+- Album(album_id)
 - User(user_id)
 - Comment and rate(album_id, user_id, rate, date)
 
@@ -36,7 +48,7 @@ los álbumes del 1 al 10.
 
 - Nombre y contraseña.
 
-- La identificación se generará automáticamente.
+- El ID se generará automáticamente.
 
 ### Operación del álbum
 
@@ -45,10 +57,10 @@ los álbumes del 1 al 10.
 
 # Consulta de datos
 
-- Solicitud de artista
-	- Albums
-	-Comment
-	-Genre
+  - Lista de artistas
+	- Lista de albums
+	- Comentarios en albums
+
 
 # Estructura de solicitud y respuesta
 
@@ -71,6 +83,7 @@ los álbumes del 1 al 10.
 	"comment": "This album in my opinion has a nice rap bars, and the melody is very dope, I hope Freddie Dredd dont loose the flow and style"
 	"rate": "10"
 	"date": "2021-04-23T18:25:43.511Z"
+	"user_id": "0001"
 }
 ```
 ### Respuesta exitosa del registro de comentarios
@@ -83,11 +96,13 @@ los álbumes del 1 al 10.
 ### Implementación de rutas de recursos
 
 
-`POST /musiclife/artist/albums_lists_artist/comment` : Esto registrará el comentario, la tasa y la fecha.
+`POST /musiclife/artist/albums_lists_artist/comment` : Esto registrará el comentario, la calificacion y la fecha.
 
 `GET /musiclife/artists_list` : Esto solicitará la lista de los artistas disponibles.
 
 `GET /musiclife/albums_lists_artist` : Esto solicitará la lista de los álbumes disponibles del artista.
+
+`GET /musiclife/albums` : Esto solicitara la lista de todos los albums disponibles.
 
 `POST /musiclife/user/add` : Esto registrará un nuevo usuario.
 
@@ -129,7 +144,7 @@ igual que artista, álbumes, etc.
 
 Para los recursos informáticos, necesitaremos un servidor dedicado donde ejecutamos un servidor HTTP. Y
 otros servicios que serán necesarios para brindar el servicio. También necesitaremos una base de datos donde
-debe almacenar todos los comentarios, tarifas, usuarios y fechas.
+debe almacenar todos los comentarios, calificaciones, usuarios y fechas.
 
 # Aspecto Tecnico
 
