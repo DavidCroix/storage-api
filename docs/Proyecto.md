@@ -17,6 +17,17 @@ Los albums son la entidad que contiene la lista de los albums disponibles por ar
 - Usuario(user_id)
 Este sera necesario para identificarse dentro de la plataforma.
 
+# Consulta de datos
+
+- Consulta de información
+		- Por Artistas
+		- Por Albums
+
+- Consulta en general
+		- Lista completa de Artistas
+		- Lista completa de Albums
+
+
 # Como funciona
 
 | Path								| Description     |
@@ -156,7 +167,7 @@ debe almacenar todos los comentarios, calificaciones, usuarios y fechas.
 
 ### Metodos de almacenamiento
 
-- Para el almacenamiento solo se requiere una funcion para guardar el texto en forma `string` .
+- Para el almacenamiento se requiere de un sistema de archivos local.
 
 ## Plan para la codificacion de los Modulos
 
