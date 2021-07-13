@@ -7,44 +7,37 @@ from modules.auth import auth_required
 
 app = bottle.Bottle()
 
-## Get artist list
-@app.get("/musiclife/list")
+## Get the login
+@app.get("/musiclife/login")
 def get_artist_list(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
 
-## Get artist details
-@app.get("/musiclife/<artist_id>")
-def get_artist_details(*args, **kwargs):
+## Get the artist list
+@app.get("/musiclife/artists_list")
+def get_artist_list(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
 
-## Update artist details
-@app.post("/musiclife/<artist_id>")
-def update_artist_details(*args, **kwargs):
+## Get the artist albums
+@app.post("/musiclife/albums_lists_artist")
+def get_artist_albums(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
 
-## Get all reviews from an artist
-@app.get("/musiclife/<artist_id>/review")
-def get_all_artist_reviews(*args, **kwargs):
+## Add a user
+@app.get("/musiclife/user/add")
+def add_a_user(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
 
-## Add a review to a certain album
-@app.post("/musiclife/<artist_id>/review")
-def add_a_review(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
-
-## Get a certain review from a certain artist
-@app.get("/musiclife/<artist_id>/review/<review_id>")
-def get_review_from_artist(*args, **kwargs):
+## Get the complete list of albums
+@app.post("/musiclife/albums")
+def get_all_albums(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
