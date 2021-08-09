@@ -1,7 +1,7 @@
 import datetime as dt
 import bottle
 from modules.bottles import BottleJson
-from modules.movie_info import (
+from modules.musiclife import (
     add_review,
     get_reviews_from_album,
     get_list_albums,
