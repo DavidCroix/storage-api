@@ -19,12 +19,8 @@ app = bottle.Bottle()
 
 app.mount("/auth", routes.auth.app)
 app.mount("/storage", routes.storage.app)
-
 app.mount("/musiclife/login", routes.musiclife)
-app.mount("/musiclife/albums_lists_artist")
-app.mount("/musiclife/user/add")
-app.mount("/musiclife/albums")
-app.mount("/musiclife/artist/albums_lists_artist/comment")
+
 
 @app.get("/")
 def root_index(*args, **kwargs):
