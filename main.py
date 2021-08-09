@@ -21,7 +21,6 @@ app.mount("/auth", routes.auth.app)
 app.mount("/storage", routes.storage.app)
 
 app.mount("/musiclife/login", routes.musiclife)
-app.mount("/musiclife/artists_list")
 app.mount("/musiclife/albums_lists_artist")
 app.mount("/musiclife/user/add")
 app.mount("/musiclife/albums")
