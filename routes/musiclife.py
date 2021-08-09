@@ -1,43 +1,84 @@
-from json import dumps as json_dumps
-from os import environ
+import datetime as dt
 import bottle
-from modules.cors import enable_cors
-import modules.utils as utils
-from modules.auth import auth_required
+from modules.bottles import BottleJson
+from modules.movie_info import (
+    add_review,
+    get_reviews_from_album,
+    get_list_albums,
+    get_list_artists,
+    update_album_details
+)
 
-app = bottle.Bottle()
+app = BottleJson()
 
-## Get the login
-@app.get("/musiclife/login")
-def get_artist_list(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
+@app.get("/")
+    #Default route
 
-## Get the artist list
-@app.get("/musiclife/artists_list")
-def get_artist_list(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
-
-## Get the artist albums
-@app.post("/musiclife/albums_lists_artist")
-def get_artist_albums(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
-
-## Add a user
-@app.get("/musiclife/user/add")
-def add_a_user(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
-
-## Get the complete list of albums
-@app.post("/musiclife/albums")
+## Get albums list
+@app.get("/list")
 def get_all_albums(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
+    try:
+       respuesta = get_list_albums()
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
+
+## Get artists list
+@app.get("/list")
+def get_all_artists(*args, **kwargs):
+    try:
+       respuesta = get_list_artists()
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
+
+## Update movie details
+## This works as a simple post. The store_string function
+## updates de info that was previously storaged.
+@app.post("/<movie_id>")
+def update_album_details(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        id_artist = str(payload['id_artist'])
+        review_id = str(payload['review_id'])
+        user_id = str(payload['user_id'])
+        album_id = str(payload['album_id'])
+        rate = str(payload['rate'])
+        comment = str(payload['comment'])
+        print("Datos validos")
+        respuesta = update_album_details(**payload)
+        print(respuesta)
+        print("Almost done")
+    except:
+        print("Datos invalidos")
+        raise bottle.HTTPError(400, "Invalid data")
+    raise bottle.HTTPError(201, "Movie data has been updated")
+
+## Add a review to a certain album
+@app.post("/<movie_id>/review")
+def bar(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        id_artist = str(payload['id_artist'])
+        review_id = str(payload['review_id'])
+        user_id = str(payload['user_id'])
+        album_id = str(payload['album_id'])
+        rate = str(payload['rate'])
+        comment = str(payload['comment'])
+        print("Datos validos")
+        respuesta = add_review(**payload)
+    except:
+        print("Datos invalidos")
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(201, "Your review has been succesfully added")
+
+## Get all reviews from a movie
+@app.get("/<movie_id>/reviews")
+def get_all_reviews_from_movie(*args, album_id=None, **kwargs):
+    try:
+       respuesta = get_reviews_from_album(album_id)
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
