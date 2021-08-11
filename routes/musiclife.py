@@ -34,7 +34,7 @@ def get_all_artists(*args, **kwargs):
 ## Update albums details
 ## This works as a simple post. The store_string function
 ## updates de info that was previously storaged.
-@app.post("/<movie_id>")
+@app.post("/<musiclife>")
 def update_album_details(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
@@ -52,10 +52,10 @@ def update_album_details(*args, **kwargs):
     except:
         print("Datos invalidos")
         raise bottle.HTTPError(400, "Invalid data")
-    raise bottle.HTTPError(201, "Movie data has been updated")
+    raise bottle.HTTPError(201, "Album data has been updated")
 
 ## Add a review to a certain album
-@app.post("/<movie_id>/review")
+@app.post("/<musiclife>/review")
 def bar(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
@@ -74,8 +74,8 @@ def bar(*args, **kwargs):
     raise bottle.HTTPError(201, "Your review has been succesfully added")
 
 ## Get all reviews from an album
-@app.get("/<movie_id>/reviews")
-def get_all_reviews_from_movie(*args, album_id=None, **kwargs):
+@app.get("/<musiclife>/reviews")
+def get_all_reviews_from_album(*args, album_id=None, **kwargs):
     try:
        respuesta = get_reviews_from_album(album_id)
     except:
