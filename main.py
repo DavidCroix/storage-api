@@ -19,7 +19,7 @@ app = bottle.Bottle()
 
 app.mount("/auth", routes.auth.app)
 app.mount("/storage", routes.storage.app)
-app.mount("/musiclife/login", routes.musiclife)
+app.mount("/musiclife/albums", routes.musiclife)
 
 
 @app.get("/")
