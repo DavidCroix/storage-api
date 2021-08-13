@@ -55,7 +55,7 @@ def update_album_details(*args, **kwargs):
     raise bottle.HTTPError(201, "Album data has been updated")
 
 ## Add a review to a certain album
-@app.post("/<musiclife>/review")
+@app.post("/review")
 def bar(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
