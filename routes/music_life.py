@@ -15,13 +15,13 @@ app = BottleJson()
 
 ## Get albums list
 ## Curl example:
-@app.get("/list")
-def get_all_albums(*args, **kwargs):
-    try:
-       respuesta = get_list_albums()
-    except:
-        raise bottle.HTTPError(500, "Error interno")
-    raise bottle.HTTPError(200, respuesta)
+##@app.get("/list")
+##def get_all_albums(*args, **kwargs):
+##    try:
+##       respuesta = get_list_albums()
+##    except:
+##        raise bottle.HTTPError(500, "Error interno")
+##    raise bottle.HTTPError(200, respuesta)
 
 ## Get artists list
 ## Curl example:
@@ -36,7 +36,7 @@ def get_all_artists(*args, **kwargs):
 ## Update albums details
 ## This works as a simple post. The store_string function
 ## updates de info that was previously storaged.
-@app.post("/<musiclife>")
+@app.post("/musiclife")
 def update_album_details(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
@@ -57,7 +57,7 @@ def update_album_details(*args, **kwargs):
     raise bottle.HTTPError(201, "Album data has been updated")
 
 ## Add a review to a certain album
-@app.post("/<musiclife>/review")
+@app.post("/musiclife/review")
 def bar(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
@@ -76,7 +76,7 @@ def bar(*args, **kwargs):
     raise bottle.HTTPError(201, "Your review has been succesfully added")
 
 ## Get all reviews from an album
-@app.get("/<musiclife>/reviews")
+@app.get("/musiclife/reviews")
 def get_all_reviews_from_album(*args, album_id=None, **kwargs):
     try:
        respuesta = get_reviews_from_album(album_id)
@@ -95,7 +95,7 @@ def get_all_reviews_from_album(*args, album_id=None, **kwargs):
 
 # Curl Example:
 # curl http://localhost:8081/musiclife/store -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd","album_id": "8 Ball Playas", "genre": "RAP"}'
-@app.post("/<musiclife>/albums")
+@app.post("/musiclife/albums")
 def bar(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
@@ -117,7 +117,7 @@ def bar(*args, **kwargs):
 
 # Curl Example:
 # curl http://localhost:8081/musiclife/artists -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd", "genre": "RAP"}'
-@app.post("/<musiclife>/artists")
+@app.post("/musiclife/artists")
 def bar2(*args, **kwargs):
     print("Hola Mundo")
     payload = bottle.request.json
