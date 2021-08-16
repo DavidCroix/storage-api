@@ -13,9 +13,10 @@ import bottle
 import routes.auth
 import routes.storage
 import models.base
-import routes.musiclife
+import routes.music_life
+from modules.bottles import BottleJson
 
-app = bottle.Bottle()
+app = BottleJson()
 
 app.mount("/auth", routes.auth.app)
 app.mount("/storage", routes.storage.app)
