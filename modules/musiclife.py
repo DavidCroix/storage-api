@@ -102,7 +102,7 @@ def add_album(id_artist = None, album_id = None, genre = None):
 def add_artist(id_artist = None, genre: None):
 
 	print("Desde Modulo add_artist")
-    print(id_artist)
+    print(id_artist, genre)
     print("Exito")
 
 	almacenable = {
