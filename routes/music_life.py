@@ -100,12 +100,12 @@ def bar(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
     try:
-##        id_artist = str(payload['id_artist'])
-##        album_id  = str(payload['album_id'])
-##        genre = str(payload['genre'])
-##        print("Datos validos")
-##        respuesta = add_album(**payload)
-##        print(respuesta)
+        id_artist = str(payload['id_artist'])
+        album_id  = str(payload['album_id'])
+        genre = str(payload['genre'])
+        print("Datos validos")
+        respuesta = add_album(**payload)
+        print(respuesta)
         print("Almost done")
     except:
         print("Datos invalidos")
@@ -122,11 +122,11 @@ def bar2(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
     try:
-        id_artist = str(payload['id_artist'])
-        genre = str(payload['genre'])
-        print("Datos validos")
-        respuesta = add_artist(**payload)
-        print(respuesta)
+##        id_artist = str(payload['id_artist'])
+##        genre = str(payload['genre'])
+##        print("Datos validos")
+##        respuesta = add_artist(**payload)
+##        print(respuesta)
         print("Almost done")
     except:
         print("Datos invalidos")
