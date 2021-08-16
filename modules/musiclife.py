@@ -98,3 +98,21 @@ def add_album(id_artist = None, album_id = None, genre = None):
         json.dumps(almacenable)
     )
     return datos_album
+
+    def add_album(id_artist = None, album_id = None, genre = None):
+
+    print("Desde Modulo add_artist")
+    print(id_artist, genre)
+    print("Exito")
+
+    almacenable = {
+        "id_artist": id_artist,
+        "genre"; genre,
+    }
+    nombre_de_archivo = f"{id_artist}.json"
+    datos_artist = storage_string(
+        "artist/artists",
+        nombre_de_archivo,
+        json.dumps(almacenable)
+    )
+    return datos_artist
