@@ -56,7 +56,7 @@ def get_list_artists(artists=None):
 def update_album_details(review_id = None, user_id = None, album_id = None, id_artist = None, rate = None, comment = None ):
     print("Desde Modulo store")
     print(review_id, user_id, album_id, rate, comment)
-    print("Good")
+    print("Good desde modulo store")
 
     almacenable = {
         "review_id": review_id,
@@ -78,7 +78,7 @@ def update_album_details(review_id = None, user_id = None, album_id = None, id_a
 def add_artist(id_artist = None, genre = None):
     print("Desde modulo add_artist")
     print(id_artist, genre)
-    print("Exito")
+    print("Exito add_artist")
 
     almacenable = {
         "id_artist": id_artist,
@@ -91,6 +91,7 @@ def add_artist(id_artist = None, genre = None):
         nombre_de_archivo,
         json.dumps(almacenable)
     )
+
     return datos_artist
 
 ## add_album
