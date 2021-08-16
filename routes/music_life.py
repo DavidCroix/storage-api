@@ -125,7 +125,7 @@ def store(*args, **kwargs):
         id_artist = str(payload['id_artist'])
         genre = str(payload['genre'])
         print("Datos validos")
-        respuesta = add_album(**payload)
+        respuesta = add_artist(**payload)
         print(respuesta)
         print("Almost done")
     except:
