@@ -57,7 +57,7 @@ def update_album_details(*args, **kwargs):
     raise bottle.HTTPError(201, "Album data has been updated")
 
 ## Add a review to a certain album
-@app.post("/musiclife/review")
+@app.post("/review")
 def bar(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
@@ -76,7 +76,7 @@ def bar(*args, **kwargs):
     raise bottle.HTTPError(201, "Your review has been succesfully added")
 
 ## Get all reviews from an album
-@app.get("/musiclife/reviews")
+@app.get("/reviews")
 def get_all_reviews_from_album(*args, album_id=None, **kwargs):
     try:
        respuesta = get_reviews_from_album(album_id)
@@ -95,7 +95,7 @@ def get_all_reviews_from_album(*args, album_id=None, **kwargs):
 
 # Curl Example:
 # curl http://localhost:8081/musiclife/store -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd","album_id": "8 Ball Playas", "genre": "RAP"}'
-@app.post("/musiclife/albums")
+@app.post("/albums")
 def bar(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
@@ -110,26 +110,26 @@ def bar(*args, **kwargs):
     except:
         print("Datos invalidos")
         raise bottle.HTTPError(400, "Invalid data")
-    raise bottle.HTTPError(201, respuesta)
+    raise bottle.HTTPResponse(201, respuesta)
 
 
 	## Add an artist
 
 # Curl Example:
 # curl http://localhost:8081/musiclife/artists -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd", "genre": "RAP"}'
-@app.post("/musiclife/artists")
+@app.post("/artists")
 def bar2(*args, **kwargs):
     print("Hola Mundo")
     payload = bottle.request.json
     print(payload)
     try:
-##        id_artist = str(payload['id_artist'])
-##        genre = str(payload['genre'])
-##        print("Datos validos")
-##        respuesta = add_artist(**payload)
-##        print(respuesta)
+        id_artist = str(payload['id_artist'])
+        genre = str(payload['genre'])
+        print("Datos validos")
+        respuesta = add_artist(**payload)
+        print(respuesta)
         print("Almost done")
+        return bottle.HTTPResponse(body=str(respuesta), status=201)
     except:
         print("Datos invalidos")
         raise bottle.HTTPError(400, "Invalid data")
-    raise bottle.HTTPError(201, respuesta)
