@@ -2,6 +2,8 @@ import datetime as dt
 import bottle
 from modules.bottles import BottleJson
 from modules.music_life import (
+    add_artist,
+    add_album,
     add_review,
     get_reviews_from_album,
     get_list_albums,
