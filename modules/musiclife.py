@@ -92,9 +92,9 @@ def update_album_details(review_id = None, user_id = None, album_id = None, id_a
             }
             nombre_de_archivo = f"{id_artist}.json"
             datos_artist = storage_string(
-            "artist/artists",
-            nombre_de_archivo,
-            json.dumps(almacenable)
+                "artist/artists",
+                nombre_de_archivo,
+                json.dumps(almacenable)
             )
             return datos_artist
 
