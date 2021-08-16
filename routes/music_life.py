@@ -81,3 +81,51 @@ def get_all_reviews_from_album(*args, album_id=None, **kwargs):
     except:
         raise bottle.HTTPError(500, "Error interno")
     raise bottle.HTTPError(200, respuesta)
+
+
+
+
+## Extension para ver si funciona
+
+## music life routes
+
+## Add an album
+
+# Curl Example:
+# curl http://localhost:8081/musiclife/store -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd","album_id": "8 Ball Playas", "genre": "RAP"}'
+@app.post("/store")
+def store(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        id_artist = str(payload['id_artist'])
+        album_id  = str(payload['album_id'])
+        genre = str(payload['genre'])
+        print("Datos validos")
+        respuesta = add_album(**payload)
+        print(respuesta)
+        print("Almost done")
+    except:
+        print("Datos invalidos")
+        raise bottle.HTTPError(400, "Invalid data")
+    raise bottle.HTTPError(201, respuesta)
+
+
+	## Add an artist
+
+# Curl Example:
+# curl http://localhost:8081/musiclife/store -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd"}'
+@app.post("/store")
+def store(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        id_artist = str(payload['id_artist'])
+        print("Datos validos")
+        respuesta = add_album(**payload)
+        print(respuesta)
+        print("Almost done")
+    except:
+        print("Datos invalidos")
+        raise bottle.HTTPError(400, "Invalid data")
+    raise bottle.HTTPError(201, respuesta)
