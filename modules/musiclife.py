@@ -94,16 +94,16 @@ def add_artist(id_artist = None, genre = None):
     return datos_artist
 
 ## add_album
-def add_album(id_artist = None, album_id = None, genre = None):
+def add_album(id_artist = None, album_id = None, genre2 = None):
 
     print("Desde Modulo add_album")
-    print(id_artist, album_id, genre)
+    print(id_artist, album_id, genre2)
     print("Exito")
 
     almacenable = {
         "id_artist": id_artist,
         "album_id": album_id,
-        "genre": genre,
+        "genre2": genre2,
     }
     nombre_de_archivo = f"{id_artist}-{album_id}.json"
     datos_album = store_string(
