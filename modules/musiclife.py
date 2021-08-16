@@ -88,7 +88,7 @@ def update_album_details(review_id = None, user_id = None, album_id = None, id_a
 
         almacenable = {
             "id_artist": id_artist,
-            "genre"; genre,
+            "genre": genre,
             }
             nombre_de_archivo = f"{id_artist}.json"
             datos_artist = storage_string(
