@@ -116,13 +116,14 @@ def store(*args, **kwargs):
 	## Add an artist
 
 # Curl Example:
-# curl http://localhost:8081/musiclife/store -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd"}'
+# curl http://localhost:8081/musiclife/store -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd", "genre": "RAP"}'
 @app.post("/store")
 def store(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
     try:
         id_artist = str(payload['id_artist'])
+        genre = str(payload['genre'])
         print("Datos validos")
         respuesta = add_album(**payload)
         print(respuesta)
