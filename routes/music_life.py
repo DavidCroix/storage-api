@@ -119,7 +119,7 @@ def bar(*args, **kwargs):
 # curl http://localhost:8081/musiclife/artists -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd", "genre": "RAP"}'
 @app.post("/<musiclife>/artists")
 def bar2(*args, **kwargs):
-    print(Hola Mundo)
+    print("Hola Mundo")
     payload = bottle.request.json
     print(payload)
     try:
