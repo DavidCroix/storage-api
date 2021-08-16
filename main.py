@@ -13,7 +13,7 @@ import bottle
 import routes.auth
 import routes.storage
 import models.base
-import routes.musiclife
+import routes.music_life
 
 app = bottle.Bottle()
 
