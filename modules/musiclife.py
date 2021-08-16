@@ -75,28 +75,23 @@ def update_album_details(review_id = None, user_id = None, album_id = None, id_a
     )
     return datos
 
+def add_artist(id_artist = None, genre = None):
+    print("Desde modulo add_artist")
+    print(id_artist, genre)
+    print("Exito")
 
+    almacenable = {
+        "id_artist": id_artist,
+        "genre": genre,
+    }
 
-## Extension para ver si funciona
-
-## add_artist
-
-    def add_artist(id_artist = None, genre = None):
-        print("Desde Modulo add_artist")
-        print(id_artist, genre)
-        print("Exito")
-
-        almacenable = {
-            "id_artist": id_artist,
-            "genre": genre,
-            }
-            nombre_de_archivo = f"{id_artist}.json"
-            datos_artist = storage_string(
-                "artist/artists",
-                nombre_de_archivo,
-                json.dumps(almacenable)
-            )
-            return datos_artist
+    nombre_de_archivo = f"{id_artist}.json"
+    datos_artist = store_string(
+        "artist/artists",
+        nombre_de_archivo,
+        json.dumps(almacenable)
+    )
+    return datos_artist
 
 ## add_album
 def add_album(id_artist = None, album_id = None, genre = None):
