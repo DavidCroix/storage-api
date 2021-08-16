@@ -20,8 +20,8 @@ app = BottleJson()
 
 app.mount("/auth", routes.auth.app)
 app.mount("/storage", routes.storage.app)
-app.mount("/musiclife/albums", routes.musiclife.app)
-app.mount("/musiclife", routes.musiclife.app)
+app.mount("/musiclife/albums", routes.music_life.app)
+app.mount("/musiclife", routes.music_life.app)
 
 
 
