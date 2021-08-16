@@ -96,7 +96,7 @@ def get_all_reviews_from_album(*args, album_id=None, **kwargs):
 # Curl Example:
 # curl http://localhost:8081/musiclife/store -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd","album_id": "8 Ball Playas", "genre": "RAP"}'
 @app.post("/<musiclife>/albums")
-def bar(*args, **kwargs):
+def add_album(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
     try:
@@ -118,7 +118,7 @@ def bar(*args, **kwargs):
 # Curl Example:
 # curl http://localhost:8081/musiclife/artists -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd", "genre": "RAP"}'
 @app.post("/<musiclife>/artists")
-def bar(*args, **kwargs):
+def add_artist(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
     try:
