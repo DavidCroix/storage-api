@@ -102,21 +102,22 @@ def bar(*args, **kwargs):
     try:
         id_artist = str(payload['id_artist'])
         album_id  = str(payload['album_id'])
-        genre = str(payload['genre'])
+        genre2 = str(payload['genre2'])
         print("Datos validos")
         respuesta = add_album(**payload)
         print(respuesta)
         print("Almost done")
+        return bottle.HTTPResponse(body=str(respuesta), status=201)
     except:
         print("Datos invalidos")
         raise bottle.HTTPError(400, "Invalid data")
-    raise bottle.HTTPResponse(201, respuesta)
+
 
 
 	## Add an artist
 
 # Curl Example:
-# curl http://localhost:8081/musiclife/artists -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd", "genre": "RAP"}'
+# curl http://localhost:8081/musiclife/artists -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Metrik Vader", "genre": "RAP"}'
 @app.post("/artists")
 def bar2(*args, **kwargs):
     print("Hola Mundo")
