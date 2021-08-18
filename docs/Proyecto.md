@@ -214,14 +214,158 @@ Aqui se señala cual es el commit a partir de donde se realizo el fork.
 |  Creacion de /docs/assets/|   948608729216ffaf2316004ef2b6f5cd0a5d5639
 
 ## Explicacion de Mock Ups
-![Login](https://github.com/DavidCroix/storage-api/blob/948608729216ffaf2316004ef2b6f5cd0a5d5639/docs/assets/Mock%20Up%20Inicio%20Music%20Life.png)
+![Login](https://github.com/DavidCroix/storage-api/blob/0114cb96fe665363fb786cb5e3abd08e282ecd9b/docs/assets/Mock%20Up%20Inicio%20Music%20Life.png)
 Dentro de la ruta /docs/assets en la imagen `Mock Up Inicio Music Life.png` podremos encontrar la estructura deseada de la pagina, que sera el inicio. Donde tendremos los botones de Artistas, Albums, una barra de busqueda, asi como una seccion donde se encontrara el contenido mas nuevo.
 
-![Login](https://github.com/DavidCroix/storage-api/blob/1e02710332aca970fd168249329c7bb96c7b2777/docs/assets/Mock%20Up%20Lista%20de%20Artistas.png)
+![Login](https://github.com/DavidCroix/storage-api/blob/0114cb96fe665363fb786cb5e3abd08e282ecd9b/docs/assets/Mock%20Up%20Lista%20de%20Artistas.png)
 Dentro de la imagen `Mock Up Lista de Artistas.png` se desplegara la lista de los artistas que se encuentren disponibles al momento de dar click en el boton de artistas.
 
-![Login](https://github.com/DavidCroix/storage-api/blob/1e02710332aca970fd168249329c7bb96c7b2777/docs/assets/Mock%20Up%20Lista%20de%20Albums%20de%20Artista.png)
+![Login](https://github.com/DavidCroix/storage-api/blob/0114cb96fe665363fb786cb5e3abd08e282ecd9b/docs/assets/Mock%20Up%20Lista%20de%20Albums%20de%20Artista.png)
 Posteriormente en la imagen `Mock Up Lista de Albums de Artista.png` al dar click sobre el nombre de algun artista este redirigira a una pagina donde se mostraran la lista de los albums disponibles del artista.
 
-![Login](https://github.com/DavidCroix/storage-api/blob/1e02710332aca970fd168249329c7bb96c7b2777/docs/assets/Mock%20Up%20Agregar%20Comentario%20Album.png)
+![Login](https://github.com/DavidCroix/storage-api/blob/0114cb96fe665363fb786cb5e3abd08e282ecd9b/docs/assets/Mock%20Up%20Agregar%20Comentario%20Album.png)
 Por ultimo en el Mock Up `Mock Up Agregar Comentario Album.png` se observara la manera en que se mirara al momento de querer ingresar un nuevo comentario y calificación al album del artista elegido, de igual manera una vez entrando al album se desplegaran los comentarios ya existentes acerca del album.
+
+
+*-*-*-*-*-*-*-*-*-*
+
+# Casos de uso
+
+- # 1 El usuario desea agregar un Artista Nuevo.
+
+ - Para completar la accion el usuario debera ingresar los campos requeridos para almacenarlo los cuales son: id_artist y genre.
+ - En dado caso que el usuario registre datos invalidos, se le mostrara un error 400 con el mensaje
+   "Datos invalidos"
+
+ - Ejemplo de curl de registro exitoso con POST:
+```
+curl http://localhost:8081/musiclife/artists -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Ice Cube", "genre": "RAP"}'
+```
+
+- # 2 El usuario desea agregar un Album Nuevo.
+
+- El usuario debera de ingresar los campos requeridos para almacenarlo, los cuales seran id_artist, album_id y genre.
+ - En dado caso de que el usuario registre datos invalidos, se le mostrara un error 400 con el mensaje
+   "Datos Invalidos"
+
+ - Ejemplo de curl de registro exitoso con POST:
+```
+curl http://localhost:8081/musiclife/albums -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd", "album_id": "Dredd", "genre2": "RAP"}'
+```
+
+ - # 3 El usuario desea agregar un nuevo comentario a cierto album.
+
+  - El usuario debera ingresar los campos requeridos para almacenarlo, los cuales son comment y range.
+  - Los demas campos del curl se agregaran automatico ua vez dado el click en el boton de guardar comentario, tales campos seran
+    id_artist, review_id, user_id, album_id.
+ - En dado caso de que el usuario registre datos invalidos, se le mostrara un error 400 con el mensaje
+   "Datos Invalidos"
+
+ - Ejemplo de curl de registro exitoso con POST:
+
+```
+curl http://localhost:8081/musiclife/review -X POST -H 'Content-Type: application/json' -d '{"review_id": "008", "user_id": "009", "album_id": "Freskibon", "id_artist": "Metrik Vader", "rate": "5", "comment": "pura rola chida desde cancun"}'
+```
+
+ - # 4 El usuario desea consultar todos los artistas disponibles.
+
+  - En estos casos el id_artist sera el identificador con el que se podra consultar la informacion.
+  - En dado caso de que el usuario utilize un identificador no existente se marcara un error 500 con el mensaje
+	"Error Interno"
+
+  - Ejemplo de curl para una consulta especifica con GET
+
+```
+curl http://localhost:8081/artists -X GET
+```
+
+ - # 5 El usuario desea consultar todos los albums disponibles.
+
+  - En estos casos el album_id sera el identificador con el que se podra consultar la informacion.
+  - En dado caso de que el usuario utilize un identificador no existente se marcara un error 500 con el mensaje
+	"Error Interno"
+
+  - Ejemplo de curl para una consulta especifica con GET
+
+```
+curl http://localhost:8081/albums -X GET
+```
+
+ - # 6 El usuario desea consultar todos los comentarios de un album disponible.
+
+  - En estos casos el album_id sera el identificador con el que se podra consultar la informacion.
+  - En dado caso de que el usuario utilize un identificador no existente se marcara un error 500 con el mensaje
+	"Error Interno"
+
+  - Ejemplo de curl para una consulta especifica con GET
+
+```
+curl http://localhost:8081/albums/8_Ball_Playas/review -X GET
+
+
+# Planeacion para desarrollo de Front-end
+
+Para el desarrollo de este se requerira un maquetador para que el diseño de la pagina sea de lo mas apropiado para el
+tipo de proyecto que representa y deje a futuro espacio para nuevas funciones.
+Mediante el uso de HTML, CSS y JavaScrip se crearan los debidos archivos donde dentro de estos se contendra funciones, asi como
+el diseño, se configurara que la pagina sea dinamica de tal manera que funcione en Navegadores Web de PC y de telefonos.
+
+- Para el debido funcionamiento el servidor debera procesar las consultas para GET, UPDATE y POST, de las siguientes identidades
+dentro de el Storage-API, Artista y Album.
+- Se requiere que las validaciones para el almacenamiento de datos incorrectos este definido para evitar complicaciones en
+las consultas de informacion que se requiera.
+
+- Se requiere que el inicio de sesion de la pagina funcione correctamente y que le asigne a los usuarios los permisos correspondientes
+conforme a su nivel de jerarquia.
+
+## Para el diseno del login se propone lo siguiente:
+
+Se presentaran dos campos, donde vendra con texto adentro de user name y password, las cuales seran las credenciales del usuario,
+posteriormente estas se autentificaran con el boton de ingresar a sesion.
+
+![Login](https://github.com/DavidCroix/storage-api/blob/0114cb96fe665363fb786cb5e3abd08e282ecd9b/docs/assets/Mock%20Up%20Login.png)
+
+## Para la pagina inicio se propone lo siguiente:
+
+Que se reciba con un cuadro de texto donde se encuentre los artistas mas recientes, asi como dos botones uno de lista de artistas y lista de albums.
+
+
+![Login](https://github.com/DavidCroix/storage-api/blob/0114cb96fe665363fb786cb5e3abd08e282ecd9b/docs/assets/Mock%20Up%20Inicio%20Music%20Life.png)
+
+## Una vez dado un click en Artistas, se redirigira a una pagina donde se tendra la lista de los artistas disponibles.
+
+![Login](https://github.com/DavidCroix/storage-api/blob/0114cb96fe665363fb786cb5e3abd08e282ecd9b/docs/assets/Mock%20Up%20Lista%20de%20Artistas.png)
+
+## Para la siguiente pagina se seleccionara un artista y la pagina de albums desplegara una lista de los albums disponibles.
+
+![Login](https://github.com/DavidCroix/storage-api/blob/0114cb96fe665363fb786cb5e3abd08e282ecd9b/docs/assets/Mock%20Up%20Lista%20de%20Albums%20de%20Artista.png)
+
+## Una vez seleccionado el album se observara el album y se encontrara el cuadro de texto donde se insertara el comentario asi como
+un medidor donde seleccionara la calificacion del album.
+
+![Login](https://github.com/DavidCroix/storage-api/blob/0114cb96fe665363fb786cb5e3abd08e282ecd9b/docs/assets/Mock%20Up%20Agregar%20Comentario%20Album.png)
+
+# Documentacion para continuar el trabajo
+
+Para el posible continuo desarrollo del proyecto se tiene la siguiente lista de actividades para realizar:
+
+- Debuggear las funciones de musiclife.py en la ruta de modulos, como en la ruta de routes/music_life.py, ya que
+ambos archivos tienen un conflicto en la declaracion de las variables.
+
+- Debuggear las ruta master del proyecto asi como demas rutas donde se guardaran los archivos JSON.
+
+- Desarrollar inicio de sesion autenticado para usuarios.
+
+- Desarrollar funcion para que incremente automaticamente el numero de usuario.
+
+- Desarrollar funcion para que incremente automaticamente el numero de comentarios realizados.
+
+- Limitar permisos y privilegios de usuarios para consultas y registro de datos.
+
+- Desarrollar funcion de busqueda por id, ya se artista, album, o genero.
+
+- Desarrollar y declarar errores para evitar multiples mismos artistas, comentarios, albums.
+
+- Desarrollar rutas para GET y verificar errores.
+
+- Debuggear funciones de GET para realizar busquedas por CURL.
