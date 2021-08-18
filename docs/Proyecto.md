@@ -301,7 +301,7 @@ curl http://localhost:8081/albums -X GET
 
 ```
 curl http://localhost:8081/albums/8_Ball_Playas/review -X GET
-
+```
 
 # Planeacion para desarrollo de Front-end
 
