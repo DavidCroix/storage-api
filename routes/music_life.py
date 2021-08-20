@@ -36,6 +36,7 @@ def get_all_artists(*args, **kwargs):
 ## Update albums details
 ## This works as a simple post. The store_string function
 ## updates de info that was previously storaged.
+## curl http://localhost:8081/musiclife/review -X POST -H 'Content-Type: application/json' -d '{"review_id": "011", "user_id": "011", "album_id": "I want to die in New Orleans", "id_artist": "SUICIDEBOYS", "rate": "5", "comment": "NICE VOCALS AND VERSE FROM RUBY DA CHERRY"}'
 @app.post("/musiclife")
 def update_album_details(*args, **kwargs):
     payload = bottle.request.json
@@ -94,7 +95,7 @@ def get_all_reviews_from_album(*args, album_id=None, **kwargs):
 ## Add an album
 
 # Curl Example:
-# curl http://localhost:8081/musiclife/store -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Freddie Dredd","album_id": "8 Ball Playas", "genre": "RAP"}'
+# curl http://localhost:8081/musiclife/store -X POST -H 'Content-Type: application/json' -d '{"id_artist": "SUICIDEBOYS","album_id": "I want to die in New Orleans", "genre": "RAP"}'
 @app.post("/albums")
 def bar(*args, **kwargs):
     payload = bottle.request.json
@@ -117,7 +118,7 @@ def bar(*args, **kwargs):
 	## Add an artist
 
 # Curl Example:
-# curl http://localhost:8081/musiclife/artists -X POST -H 'Content-Type: application/json' -d '{"id_artist": "Metrik Vader", "genre": "RAP"}'
+# curl http://localhost:8081/musiclife/artists -X POST -H 'Content-Type: application/json' -d '{"id_artist": "SUICIDEBOYS", "genre": "RAP"}'
 @app.post("/artists")
 def bar2(*args, **kwargs):
     print("Hola Mundo")
