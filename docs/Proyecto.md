@@ -347,25 +347,22 @@ un medidor donde seleccionara la calificacion del album.
 
 # Documentacion para continuar el trabajo
 
-Para el posible continuo desarrollo del proyecto se tiene la siguiente lista de actividades para realizar:
+Para el posible continuo desarrollo del proyecto se tienen en consideracion la correccion y creacion de los siguientes pendientes:
 
-- Debuggear las funciones de musiclife.py en la ruta de modulos, como en la ruta de routes/music_life.py, ya que
-ambos archivos tienen un conflicto en la declaracion de las variables.
+Las rutas donde se almacenan los JSON de artista y de albums tienen que ser corregidos en el archivo que se encuentra en la ruta, ``` /modules/musiclife.py ``` de igual manera cada uno de los id de la variable ``` almacenable ``` se tienen que verificar que esten con el mismo nombre, que en el archivo en la ruta ``` /routes/musiclife.py ```. Se deberan realizar pruebas con los CURL y con los print verificar que la variable de nombre ``` almacenable ``` este recibiendo los argumentos debidamente, para verificar que la funcion si sirve.
 
-- Debuggear las ruta master del proyecto asi como demas rutas donde se guardaran los archivos JSON.
+Se deberan replantear la manera en la que operan los CURL de GET, ya que las rutas aun no han sido completamente definidas,
+y esto da lugar a que el lugar donde se manda el JSON almacenable no sea la ruta debida y por lo tanto se tenga un conflicto al accionar la funcion, y esta no tenga la ruta determinada para hacer la consulta.
 
-- Desarrollar inicio de sesion autenticado para usuarios.
+Se deberan realizar diversas funciones para que los campos donde el usuario interactue se encuentren fuera de
+fallos, ya sea por contenido agregado, o por algun otro error que pueda pasar desapersivido. Otra de las demas
+funciones que deberan desarrollarse seran las funciones para el incremento automaticamente tanto del id de usuario,
+tanto como del numero de comentario, para tener un mejor control y una manera mas sencilla de acceder a los datos en
+dado caso que se requiera hacer una consulta.
 
-- Desarrollar funcion para que incremente automaticamente el numero de usuario.
 
-- Desarrollar funcion para que incremente automaticamente el numero de comentarios realizados.
+De igual manera se debera realizar algun tipo de funcion para que los usuarios tengan ciertos permisos y 
+privilegios conforme al rango del usuario, esto para evitar que realizen actos no debidos.
 
-- Limitar permisos y privilegios de usuarios para consultas y registro de datos.
-
-- Desarrollar funcion de busqueda por id, ya se artista, album, o genero.
-
-- Desarrollar y declarar errores para evitar multiples mismos artistas, comentarios, albums.
-
-- Desarrollar rutas para GET y verificar errores.
-
-- Debuggear funciones de GET para realizar busquedas por CURL.
+Se debera desarroollar CURL de busqueda por id, ya se de algun artista o album que se encuentre en existencia, asi
+como por numero de comentario y por id de albums.
